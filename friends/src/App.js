@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 import Login from './components/Login';
 import PrivateRoute from './components/PrivateRoute';
-import FriendsList from './components/FriendsList';
+import FriendsListView from './views/FriendsListView';
 
 import './App.css';
 
@@ -13,12 +13,12 @@ function App() {
         <>
           <ul>
             <li><Link to='/login'>Log in</Link></li>
-            <li><Link to='/friendsList'>Friends List</Link></li>
+            <li><Link to='/friendsListView'>Friends List</Link></li>
           </ul>
           <div className="App">
             <h1>Something about friends</h1>
             <Route path='/login' component={Login} />
-            <PrivateRoute exact path='/friendsList' component={FriendsList} />
+            <PrivateRoute exact path='/friendsListView' component={FriendsListView} />
 
           </div>
         </>

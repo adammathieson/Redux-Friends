@@ -15,7 +15,7 @@ export const login = creds => dispatch => {
 
 export const getData = () => {
     axios
-        .get('http://localhost:5000/api/data', {
+        .get('http://localhost:5000/api/friends', {
             headers: { Authorization: localStorage.getItem('token') }
         })
         .then(res => {
