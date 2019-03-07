@@ -5,6 +5,8 @@ import Loader from 'react-loader-spinner';
 
 import { FriendsList } from '../components';
 
+import { getFriends } from '..actions';
+
 class FriendsListView extends React.Component {
 
     componentDidMount() {
@@ -12,7 +14,7 @@ class FriendsListView extends React.Component {
     }
     
     render() {
-        if (this.props.fetching) {
+        if (this.props.fetchingFriends) {
             return (
                 <Loader type='Ball-Triangle' color='#00bfff' height='90' width='60' />
             )
@@ -27,7 +29,7 @@ class FriendsListView extends React.Component {
 } 
 
 const mapStateToProps = state => ({
-    fetching: state.friendsReducer.fetching,
+    fetchingFriends: state.friendsReducer.fetchingFriends,
     friends: state.friendsReducer.friends
 });
 
